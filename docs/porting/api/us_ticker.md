@@ -44,7 +44,7 @@ To implement this API, the device must have a hardware counter that has a count 
 
 You can find the API and specification for the microsecond ticker API in the following header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__us__ticker.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__us__ticker.html)
 
 To enable microsecond ticker support add `DEVICE_USTICKER=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.
 

@@ -28,7 +28,7 @@ The core system clock is disabled. You can only enable the low frequency clocks 
 
 You can find the API and specification for the sleep API in the following header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__sleep.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__sleep.html)
 
 
 To enable sleep support add `DEVICE_SLEEP=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.

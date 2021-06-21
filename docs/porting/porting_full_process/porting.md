@@ -13,7 +13,7 @@ Below is a step-by-step guide to include a Git submodule reference to your SDK.
     ```
 1. Add MCU-Driver-HAL as a submodule to your SDK
     ```
-    $ git submodule add git@github.com:ARMmbed/MCU-Driver-HAL.git
+    $ git submodule add git@github.com:mcu-driver-hal/MCU-Driver-HAL.git
     ```
     This adds a reference to the repository to the `.gitmodules` file at the root of your SDK repository to link MCU-Driver-HAL to it. The command also adds the `.gitmodules` and a SHA of the MCU-Driver-HAL to the index of the SDK repository.
 1. Add a commit to your SDK:

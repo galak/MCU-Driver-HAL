@@ -17,7 +17,7 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 ## HAL API documentation
 
-See the [HAL API Doxygen documentation](https://armmbed.github.io/MCU-Driver-HAL).
+See the [HAL API Doxygen documentation](https://mcu-driver-hal.github.io/MCU-Driver-HAL).
 
 ## Porting guide
 

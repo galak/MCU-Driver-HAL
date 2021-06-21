@@ -24,7 +24,7 @@ Some SWO viewers do not allow an arbitrary frequency to be set. Make sure the de
 
 ## Implementing the ITM API
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__itm__hal.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__itm__hal.html)
 
 - You must implement the function `itm_init`. When the function is called:
   - The function must initialize the debug clock for the ITM.

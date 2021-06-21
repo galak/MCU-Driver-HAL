@@ -48,7 +48,7 @@ Hardware low power ticker capabilities.
 
 You can find the API and specification for the low power ticker API in the following header file:
 <!-- TODO: There is no doxygen documentation for this, it needs to be added -->
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__lp__ticker.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__lp__ticker.html)
 
 To enable low power ticker support add `DEVICE_LPTICKER=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.
 

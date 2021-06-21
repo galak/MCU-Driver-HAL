@@ -32,7 +32,7 @@ The hardware CRC module in the MCU that supports at least one of the following d
 
 You can find the API and specification for the hardware CRC API in the following header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__crc.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__crc.html)
 
 ## Testing
 

@@ -11,9 +11,7 @@ Steps to update target to support bootloader:
 When building a bootloader application or an application that uses a bootloader, the MCU-Driver-HAL build system automatically defines values for the start of application flash (`MBED_APP_START`) and size of application flash (`MBED_APP_SIZE`) when pre-processing the linker script.  
 When updating a target to support this functionality, linker scripts must place all flash data in a location starting at `MBED_APP_START` and must limit the size of that data to `MBED_APP_SIZE`. This change must occur for the linker scripts of all supported toolchains.
 
-You can find examples of the following linker files:
-* [ARM example linker file](https://github.com/ARMmbed/MCU-Driver-ST/blob/main/TARGET_STM32L4/TARGET_STM32L475xG/TOOLCHAIN_ARM/stm32l475xg.sct#L20)
-* [GCC_ARM example linker file](https://github.com/ARMmbed/MCU-Driver-ST/blob/main/TARGET_STM32L4/TARGET_STM32L475xG/TOOLCHAIN_GCC_ARM/stm32l475xg.ld#L42)
+Please refer to existing SiP implementation for reference.
 
 Use these 2 defines in place of flash start and size for a target:
 - `MBED_APP_START` - defines an address where an application space starts.
@@ -81,11 +79,11 @@ Bootloader-ready declaration of flash VTOR address:
 
 ## Start application
 
-The `mbed_start_application` implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in [the Arm Mbed_application code file](https://github.com/ARMmbed/MCU-Driver-HAL/blob/main/bootstrap/mbed_application.c). If `mbed_start_application` does not support your target, you must implement this function in the target HAL.
+The `mbed_start_application` implementation exists only for Cortex-M3, Cortex-M4 and Cortex-M7. You can find it in [the Arm Mbed_application code file](https://github.com/mcu-driver-hal/MCU-Driver-HAL/blob/main/bootstrap/mbed_application.c). If `mbed_start_application` does not support your target, you must implement this function in the target HAL.
 
 ## Flash HAL
 
-For a bootloader to perform updates, you must implement the flash API. This consists of implementing the function in [flash_api.h](https://github.com/ARMmbed/MCU-Driver-HAL/blob/main/hal/include/hal/flash_api.h).
+For a bootloader to perform updates, you must implement the flash API. This consists of implementing the function in [flash_api.h](https://github.com/mcu-driver-hal/MCU-Driver-HAL/blob/main/hal/include/hal/flash_api.h).
 
 ### Implement your own HAL driver
 

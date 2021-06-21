@@ -82,7 +82,7 @@ Hardware I2C capabilities.
 
 You can find the API and specification for the I2C API in the header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal___general_i2_c.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal___general_i2_c.html)
 
 To enable I2C support add `DEVICE_I2C=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.
 You can also add the `DEVICE_I2C_ASYNCH=1` in the CMake variable `MBED_TARGET_DEFINITIONS` to enable the asynchronous API,

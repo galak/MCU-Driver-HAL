@@ -29,9 +29,9 @@ Features
   * spi
   * trng
   * watchdog
-* HAL API Doxygen [documentation](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/index.html)
-* HAL porting guide [documentation](https://github.com/ARMmbed/MCU-Driver-HAL/blob/main/docs/porting/PORTING.md)
-* [Example applications](https://github.com/ARMmbed/MCU-Driver-HAL/tree/main/examples#provided-examples)
+* HAL API Doxygen [documentation](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/index.html)
+* HAL porting guide [documentation](https://github.com/mcu-driver-hal/MCU-Driver-HAL/blob/main/docs/porting/PORTING.md)
+* [Example applications](https://github.com/mcu-driver-hal/MCU-Driver-HAL/tree/main/examples#provided-examples)
   * flash, gpio, interrupt, serial, spi, trace, trng, us_ticker
 * Greentea tests
   * Echo Serial

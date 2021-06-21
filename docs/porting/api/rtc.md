@@ -32,7 +32,7 @@ Hardware RTC capabilities.
 
 You can find the API and specification for the RTC API in the following header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__rtc.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__rtc.html)
 
 To enable RTC support add `DEVICE_RTC=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.
 

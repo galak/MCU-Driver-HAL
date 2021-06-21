@@ -27,7 +27,7 @@ Hardware ResetReason registers.
 
 You can find the API and specification for the ResetReason API in the following header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__reset__reason.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__reset__reason.html)
 
 To enable ResetReason HAL support add `DEVICE_RESET_REASON=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.
 

@@ -23,7 +23,7 @@ QSPI peripheral
 
 You can implement your own QSPI by pulling in the following API header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__qspi.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__qspi.html)
 
 The MCU needs to define the `qspi_s` structure - MCU specific QSPI object.
 

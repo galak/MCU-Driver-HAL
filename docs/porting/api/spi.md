@@ -112,7 +112,7 @@ Hardware SPI capabilities.
 
 You can find the API and specification for the SPI API in the following class reference:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal___general_s_p_i.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal___general_s_p_i.html)
 
 To enable SPI support add `DEVICE_SPI=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.
 You can also add the `DEVICE_SPI_ASYNCH=1` in the CMake variable `MBED_TARGET_DEFINITIONS` to enable the asynchronous API.

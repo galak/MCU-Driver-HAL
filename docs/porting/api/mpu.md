@@ -23,7 +23,7 @@ Hardware MPU capabilities.
 
 You can find the API and specification for the MPU API in the following header file:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__mpu.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__mpu.html)
 
 MCUs with a standard ARMv7-M or ARMv8-M MPU, indicated by `__MPU_PRESENT` being defined to 1 in the MCU CMSIS header, support MPU.
 To enable MPU support add `DEVICE_MPU=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.

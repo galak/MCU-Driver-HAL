@@ -32,7 +32,7 @@ Hardware Independent Watchdog support.
 
 You can find the API and specification for the Watchdog API in its HAL API reference:
 
-[![View code](../../images/view_library_button.png)](https://armmbed.github.io/MCU-Driver-HAL/doxygen/html/group__hal__watchdog.html)
+[![View code](../../images/view_library_button.png)](https://mcu-driver-hal.github.io/MCU-Driver-HAL/doxygen/html/group__hal__watchdog.html)
 
 To enable Watchdog support add `DEVICE_WATCHDOG=1` in the CMake variable `MBED_TARGET_DEFINITIONS`.
 
