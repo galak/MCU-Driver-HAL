@@ -22,17 +22,17 @@ if(CCACHE)
     set(CMAKE_CXX_COMPILER_LAUNCHER ${CCACHE})
 endif()
 
-if(NOT DEFINED MBED_TOOLCHAIN OR "${MBED_TOOLCHAIN}" STREQUAL "GCC_ARM")
+if(NOT DEFINED COMPILER OR "${COMPILER}" STREQUAL "GCC_ARM")
     include(${MBED_CONFIG_PATH}/mbed_config_gcc.cmake)
-elseif("${MBED_TOOLCHAIN}" STREQUAL "ARM")
+elseif("${COMPILER}" STREQUAL "ARM")
     include(${MBED_CONFIG_PATH}/mbed_config_arm.cmake)
 else()
-    message(FATAL_ERROR "Unsupported MBED_TOOLCHAIN=" ${MBED_TOOLCHAIN})
+    message(FATAL_ERROR "Unsupported COMPILER=" ${COMPILER})
 endif()
 
 # Load toolchain file
-if(NOT CMAKE_TOOLCHAIN_FILE OR MBED_TOOLCHAIN_FILE_USED)
-    set(MBED_TOOLCHAIN_FILE_USED TRUE CACHE INTERNAL "")
+if(NOT CMAKE_TOOLCHAIN_FILE OR COMPILER_FILE_USED)
+    set(COMPILER_FILE_USED TRUE CACHE INTERNAL "")
     include(mbed_toolchain)
 endif()
 

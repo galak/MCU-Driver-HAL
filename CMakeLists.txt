@@ -16,12 +16,12 @@
 cmake_minimum_required(VERSION 3.19.0 FATAL_ERROR)
 
 if(${CMAKE_CROSSCOMPILING})
-    if(NOT DEFINED MBED_TOOLCHAIN OR "${MBED_TOOLCHAIN}" STREQUAL "GCC_ARM")
+    if(NOT DEFINED COMPILER OR "${COMPILER}" STREQUAL "GCC_ARM")
         include(${MBED_CONFIG_PATH}/mbed_config_gcc.cmake)
-    elseif("${MBED_TOOLCHAIN}" STREQUAL "ARM")
+    elseif("${COMPILER}" STREQUAL "ARM")
         include(${MBED_CONFIG_PATH}/mbed_config_arm.cmake)
     else()
-        message(FATAL_ERROR "Unsupported MBED_TOOLCHAIN=" ${MBED_TOOLCHAIN})
+        message(FATAL_ERROR "Unsupported COMPILER=" ${COMPILER})
     endif()
 
     include(mbed_set_linker_script)
@@ -66,7 +66,7 @@ if(${CMAKE_CROSSCOMPILING})
             if("std" IN_LIST MBED_TARGET_SUPPORTED_C_LIBS)
                 message(WARNING
                     "We noticed that target.c_lib is set to `${MBED_C_LIB}`."
-                    " As the ${MBED_TARGET} target does not support a small C library for the ${MBED_TOOLCHAIN} toolchain,"
+                    " As the ${MBED_TARGET} target does not support a small C library for the ${COMPILER} toolchain,"
                     " we are using the standard C library instead."
                 )
                 set(MBED_C_LIB "std" CACHE STRING "")
@@ -88,8 +88,8 @@ if(${CMAKE_CROSSCOMPILING})
     endif()
     
     mbed_set_cpu_core_definitions(mbed-core)
-    if(${MBED_TOOLCHAIN_FILE_USED})
-        mbed_set_profile_options(mbed-core ${MBED_TOOLCHAIN})
+    if(${COMPILER_FILE_USED})
+        mbed_set_profile_options(mbed-core ${COMPILER})
         mbed_set_c_lib(mbed-core ${MBED_C_LIB})
         mbed_set_printf_lib(mbed-core ${MBED_PRINTF_LIB})
     
@@ -132,13 +132,13 @@ if(${CMAKE_CROSSCOMPILING})
     # Add compile definitions for backward compatibility with the toolchain
     # supported. New source files should instead check for __GNUC__ and __clang__
     # for the GCC_ARM and ARM toolchains respectively.
-    if(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
+    if(${COMPILER} STREQUAL "GCC_ARM")
         target_compile_definitions(mbed-core
             INTERFACE
                 TOOLCHAIN_GCC_ARM
                 TOOLCHAIN_GCC
         )
-    elseif(${MBED_TOOLCHAIN} STREQUAL "ARM")
+    elseif(${COMPILER} STREQUAL "ARM")
         target_compile_definitions(mbed-core
             INTERFACE
                 TOOLCHAIN_ARM
@@ -188,7 +188,7 @@ endif()
 #
 function(mbed_generate_bin_hex target)
     get_property(elf_to_bin GLOBAL PROPERTY ELF2BIN)
-    if (MBED_TOOLCHAIN STREQUAL "GCC_ARM")
+    if (COMPILER STREQUAL "GCC_ARM")
         # The first condition is quoted in case MBED_OUTPUT_EXT is unset
         if ("${MBED_OUTPUT_EXT}" STREQUAL "" OR MBED_OUTPUT_EXT STREQUAL "bin")
             list(APPEND CMAKE_POST_BUILD_COMMAND
@@ -202,7 +202,7 @@ function(mbed_generate_bin_hex target)
                 COMMAND ${CMAKE_COMMAND} -E echo "-- built: ${CMAKE_CURRENT_BINARY_DIR}/${target}.hex"
             )
         endif()
-    elseif(MBED_TOOLCHAIN STREQUAL "ARM")
+    elseif(COMPILER STREQUAL "ARM")
         get_property(mbed_studio_arm_compiler GLOBAL PROPERTY MBED_STUDIO_ARM_COMPILER)
         if ("${MBED_OUTPUT_EXT}" STREQUAL "" OR MBED_OUTPUT_EXT STREQUAL "bin")
             list(APPEND CMAKE_POST_BUILD_COMMAND
@@ -258,7 +258,7 @@ function(mbed_generate_map_file target)
          TARGET
              ${target}
          POST_BUILD
-        #  COMMAND ${Python3_EXECUTABLE} ${mbed-os_SOURCE_DIR}/tools/memap.py -t ${MBED_TOOLCHAIN} ${CMAKE_CURRENT_BINARY_DIR}/${target}${CMAKE_EXECUTABLE_SUFFIX}.map
+        #  COMMAND ${Python3_EXECUTABLE} ${mbed-os_SOURCE_DIR}/tools/memap.py -t ${COMPILER} ${CMAKE_CURRENT_BINARY_DIR}/${target}${CMAKE_EXECUTABLE_SUFFIX}.map
          WORKING_DIRECTORY
              ${CMAKE_CURRENT_BINARY_DIR}
          COMMENT

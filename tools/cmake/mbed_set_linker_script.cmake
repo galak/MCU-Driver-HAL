@@ -22,7 +22,7 @@ function(mbed_set_linker_script input_target raw_linker_script_path)
     # global property. We need this solely to pass the compile definitions to GCC's preprocessor,
     # so it can expand any macro definitions in the linker script.
     get_property(_linker_preprocess_definitions GLOBAL PROPERTY COMPILE_DEFS_RESPONSE_FILE)
-    if(MBED_TOOLCHAIN STREQUAL "GCC_ARM")
+    if(COMPILER STREQUAL "GCC_ARM")
         add_custom_command(
             OUTPUT
                 ${LINKER_SCRIPT_PATH}
@@ -51,7 +51,7 @@ function(mbed_set_linker_script input_target raw_linker_script_path)
             INTERFACE
                 "-T" "${LINKER_SCRIPT_PATH}"
         )
-    elseif(MBED_TOOLCHAIN STREQUAL "ARM")
+    elseif(COMPILER STREQUAL "ARM")
         target_link_options(${input_target}
             INTERFACE
                 "--scatter=${raw_linker_script_path}"

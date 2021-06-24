@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # Sets cpu core options
-if(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
+if(${COMPILER} STREQUAL "GCC_ARM")
     list(APPEND common_options
         "-mthumb"
         "-mfpu=fpv5-sp-d16"
         "-mfloat-abi=softfp"
         "-mcpu=cortex-m33"
     )
-elseif(${MBED_TOOLCHAIN} STREQUAL "ARM")
+elseif(${COMPILER} STREQUAL "ARM")
     list(APPEND common_options
         "-mfpu=fpv5-sp-d16"
         "-mfloat-abi=hard"

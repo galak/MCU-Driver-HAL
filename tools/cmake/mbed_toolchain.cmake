@@ -113,7 +113,7 @@ set(common_options "")
 set(c_cxx_compile_options "") # compile options only for C/CXX
 set(asm_compile_options "") # compile options only for ASM
 
-include(toolchains/${MBED_TOOLCHAIN})
+include(toolchains/${COMPILER})
 include(cores/${MBED_CPU_CORE})
 
 #converts a list into a string with each of its elements seperated by a space

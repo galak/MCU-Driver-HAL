@@ -46,7 +46,7 @@ The following table details the currently supported MCU-Driver-HAL examples.
 1. From a terminal, navigate to the directory containing the `CMakeLists.txt` file to build the example executable.
 1. From the directory in the previous step, run the following comand to configure the target and generate the build directory:
     ```
-    cmake -S . -B cmake_build -GNinja -DCMAKE_BUILD_TYPE=debug -DMBED_TOOLCHAIN=<TOOLCHAIN>
+    cmake -S . -B cmake_build -GNinja -DCMAKE_BUILD_TYPE=debug -DCOMPILER=<TOOLCHAIN>
     ```
 1. Run the following command to build the artefacts:
     ```

@@ -4,7 +4,7 @@ See below instructions to add support for boards that implement MCU-Driver-HAL t
 
 Important variables provided for MCU-Driver-HAL boards:
 
-* `MBED_TOOLCHAIN`: Selects the toolchain to use to build the artefacts. It an be set to `"ARM"` or `"GCC_ARM"` for the Arm Compiler toolchain or the GNU Arm Embedded Toolchain respectively.
+* `COMPILER`: Selects the toolchain to use to build the artefacts. It an be set to `"ARM"` or `"GCC_ARM"` for the Arm Compiler toolchain or the GNU Arm Embedded Toolchain respectively.
 * `MBED_TARGET`: Sets the name of the hardware platform to build the artefacts for. 
 * `MBED_CPU_CORE`: Determines the ARM MCU core the hardware platform MCU is based on. This is used to select the appropriate toolchain flags by selecting [the correct CMake module](../../../tools/cmake/cores/).
 * `MBED_C_LIB`: Selects the C standard library size to use, it can be set to `"small"` or `"std"`. If `"std"` is chosen the standard C library is used for the selected toolchain. If `"small"` is chosen, MicroLib or newlib-nano are selected for `"ARM"` or `"GCC_ARM"` respectively.
@@ -32,10 +32,10 @@ E.g
 ```cmake
 add_library(mbed-stm32l475xg INTERFACE)
 
-if(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
+if(${COMPILER} STREQUAL "GCC_ARM")
     set(STARTUP_FILE TOOLCHAIN_GCC_ARM/startup_stm32l475xx.S)
     set(LINKER_FILE TOOLCHAIN_GCC_ARM/stm32l475xg.ld)
-elseif(${MBED_TOOLCHAIN} STREQUAL "ARM")
+elseif(${COMPILER} STREQUAL "ARM")
     set(STARTUP_FILE TOOLCHAIN_ARM/startup_stm32l475xx.S)
     set(LINKER_FILE TOOLCHAIN_ARM/stm32l475xg.sct)
 endif()
